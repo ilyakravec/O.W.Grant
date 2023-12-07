@@ -1,0 +1,24 @@
+.wrapper-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 15px;
+}
+.wrapper-btn__inner {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
+}
+
+.wrapper-btn__innner__wrapper {
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}/*# sourceMappingURL=wrapper-btn.css.map */

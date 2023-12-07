@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- scss -->
+
+    <link rel="stylesheet" href="../styles/main.css">
+
+    <!-- scss -->
+
+    <!-- tables -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+
+    <!-- tables -->
+
+</head>
+
+<body>
+
+    <section class="wrapper-btn">
+
+        <div class="container">
+
+            <div class="wrapper-btn__inner">
+
+                <button class="button-upload-shift button">выгрузить отчет за смену</button>
+                <button class="button-upload-period button">выгрузить отчет за период</button>
+
+                <div class="wrapper-btn__innner__wrapper">
+                    <button data-modal="#modal-new" type="button" class="button-new button">
+                        новое проишествие
+                    </button>
+
+                    <button data-modal="#modal-archive" type="button" class="button-archive button">
+                        архив
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="modals">
+        <section class="modal" id="modal-new">
+            <div class="modal-new">
+
+                <button class="modal-new__button-close" data-close>
+                    <img src="../images/x-close-delete-svgrepo-com.svg" width="30" alt="">
+                </button>
+
+                <div class="modal-new__inner">
+
+                    <form action="post" method="/" class="modal-new__inner__form">
+                        <label for="date-accident" class="modal-new__inner__form__label">дата инцидента</label>
+                        <input type="datetime-local" id="date-accident" class="modal-new__inner__form__input">
+                    </form>
+
+                    <form action="post" method="/" class="modal-new__inner__form">
+                        <label for="type-accident" class="modal-new__inner__form__label">тип инцидента</label>
+                        <select name="" id="type-accident" class="modal-new__inner__form__select">
+                            <option value="угроза теракта">угроза теракта</option>
+                            <option value="пожар">пожар</option>
+                            <option value="посещение магазина представителями СМИ">посещение магазина представителями
+                                СМИ
+                            </option>
+                            <option value="нападение, проникновение на объект">нападение, проникновение на объект
+                            </option>
+                            <option value="приченение ущерба">приченение ущерба</option>
+                            <option value="хищение ТМЦ до 3000 руб">хищение ТМЦ до 3000 руб</option>
+                            <option value="хищение ТМЦ свыше 3000 руб">хищение ТМЦ свыше 3000 руб</option>
+                            <option value="приостановка деятельности">приостановка деятельности</option>
+                            <option value="Проверка Госорганами">Проверка Госорганами</option>
+                            <option value="проишествия, нарушения с участием персонала Компании">проишествия, нарушения
+                                с
+                                участием персонала Компании</option>
+                            <option value="Несчастный случай с покупателями и персоналом">Несчастный случай с
+                                покупателями и
+                                персоналом</option>
+                            <option value="Проишествие на транспорте (ДТП). Повреждение транспортных средств">
+                                Проишествие на
+                                транспорте (ДТП). Повреждение транспортных средств</option>
+                            <option value="Конфликты">Конфликты</option>
+                            <option value="Нарушение ЧОП">Нарушение ЧОП</option>
+                            <option value="Продажа алкогольной продукции несовершеннолетним">Продажа алкогольной
+                                продукции
+                                несовершеннолетним</option>
+                            <option value="иное проишествие">иное проишествие</option>
+                        </select>
+                    </form>
+
+                    <form action="post" method="/" class="modal-new__inner__form">
+                        <label for="status" class="modal-new__inner__form__label">статус</label>
+                        <select name="" id="status" class="modal-new__inner__form__select">
+                            <option value="завершено">завершено</option>
+                            <option value="на длительной обработке">на длительной обработке</option>
+                        </select>
+                    </form>
+
+                    <form action="post" method="/" class="modal-new__inner__form">
+                        <label for="trade network" class="modal-new__inner__form__label">Торговая сеть</label>
+                        <select name="" id="trade network" class="modal-new__inner__form__select">
+                            <option value="угроза теракта">ТС Слата</option>
+                            <option value="ТС Хлеб Соль">ТС Хлеб Соль</option>
+                        </select>
+                    </form>
+
+                    <form action="post" method="/" class="modal-new__inner__form">
+                        <label for="object-name" class="modal-new__inner__form__label">Наименование объекта</label>
+                        <input type="text" id="object-name" placeholder="введите наименование объекта"
+                            class="modal-new__inner__form__input">
+                    </form>
+
+                    <form action="post" method="/" class="modal-new__inner__form">
+                        <label for="region" class="modal-new__inner__form__label">дата инцидента</label>
+                        <select name="" id="region" class="modal-new__inner__form__select">
+                            <option value="Иркутская область">Иркутская область</option>
+                            <option value="Забайкальский край">Забайкальский край</option>
+                            <option value="Республика Бурятия">Республика Бурятия</option>
+                        </select>
+                    </form>
+
+                    <form action="post" method="/" class="modal-new__inner__form">
+                        <label for="adress" class="modal-new__inner__form__label">Адрес</label>
+                        <input type="text" id="adress" placeholder="Регион, Населенный пункт, улица, №дома"
+                            class="modal-new__inner__form__input">
+                    </form>
+
+                    <form action="post" method="/" class="modal-new__inner__form">
+                        <label for="damage-dealt" class="modal-new__inner__form__label">Нанесенный ущерб</label>
+                        <input type="text" id="damage-dealt" class="modal-new__inner__form__input" placeholder="0.00">
+                    </form>
+
+                    <form action="post" method="/" class="modal-new__inner__form">
+                        <label for="damage-prevent" class="modal-new__inner__form__label">Дата инцидента</label>
+                        <input type="text" id="damage-prevent" class="modal-new__inner__form__input" placeholder="0.00">
+                    </form>
+
+                    <form class="textarea-form" action="post">
+                        <textarea name="" id="" rows="10" class="textarea"></textarea>
+                    </form>
+
+                    <div class="btn-wrapper">
+
+                        <button class="send-button button">
+                            отправить
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section class="modal" id="modal-archive">
+            <div class="modal-archive">
+
+                <button class="modal-new__button-close" data-close>
+                    <img src="../images/x-close-delete-svgrepo-com.svg" width="30" alt="">
+                </button>
+
+                <div class="modal-archive__inner">
+                    <div class="wrapper">
+                        <div class="modal-archive__inner__btn button">
+                            №0001 от 14.11.23
+                        </div>
+
+                        <div class="modal-archive__inner__btn button">
+                            №0002 от 11.11.23
+                        </div>
+
+                        <div class="modal-archive__inner__btn button">
+                            №0003 от 24.11.23
+                        </div>
+
+                        <div class="modal-archive__inner__btn button">
+                            №0004 от 17.11.23
+                        </div>
+
+                        <div class="modal-archive__inner__btn button">
+                            №0005 от 6.11.23
+                        </div>
+
+                        <div class="modal-archive__inner__btn button">
+                            №0006 от 15.11.23
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="/js/index.js"></script>
+
+</body>
+
+</html>
